@@ -18,6 +18,25 @@ class UserController extends BaseController
 	public function register(){
 		return view('users/header').view('users/viewSingnup');
 	}
+	public function addUser(){
+		$userModel=new UserModel($db);		
+		$request = \Config\Services::request();
+		$data =array('user' => $request->getPostGet('name'), 
+					'lastName' => $request->getPostGet('lastName'),
+					'email' => $request->getPostGet('email'),
+					'cellPhone' => $request->getPostGet('cellPhone'),
+					'address' => $request->getPostGet('address'),
+					'type' => 'client',
+					'password' => $request->getPostGet('password')
+				);
+		
+
+		if ($userModel->save($data)){
+			$userModel=new UserModel($db);
+			$result= view('users/header').view('users/viewLogin');
+		}
+		return $result;
+	}
 	public function validLogin(){
 		$request = \Config\Services::request();
 		$userModel=new UserModel($db);

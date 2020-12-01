@@ -41,7 +41,6 @@
 
                     echo form_submit('validLogin','Go','class="btn btn-success"');
                     echo "<br>";
-                    echo "<br>";
                 ?>
                 <label class="text-white"><?php echo $error; ?></label>
                 <br>

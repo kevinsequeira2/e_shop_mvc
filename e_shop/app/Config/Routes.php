@@ -34,6 +34,7 @@ $routes->get('/', 'UserController::index');
 $routes->get('/users/login', 'UserController::firstView');
 $routes->get('/users/valid', 'UserController::validLogin');
 $routes->get('/users/singnup', 'UserController::register');
+$routes->get('/users/addedusers', 'UserController::addUser');
 
 /**
  * --------------------------------------------------------------------

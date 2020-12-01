@@ -34,7 +34,7 @@
                  <?php
                     echo "<br>";
                     echo "<br>";
-                    echo form_input(array('id'=>'i_login','type'=>'pass','name' =>'password' , 'placeholder' =>'password','class'=>'form-control'));
+                    echo form_input(array('id'=>'i_login','type'=>'password','name' =>'password' , 'placeholder' =>'password','class'=>'form-control'));
                     echo "<br>";
                     echo "<br>";
                     echo "<br>";

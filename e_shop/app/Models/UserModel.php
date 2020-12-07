@@ -4,6 +4,11 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
+    public function getBD(){
+       return $db = \Config\Database::connect();
+    }
+    
+
     protected $table      = 'users';
     protected $primaryKey = 'id';
 
@@ -20,4 +25,5 @@ class UserModel extends Model
     protected $validationRules    = [];
     protected $validationMessages = [];
     protected $skipValidation     = false;
+
 }

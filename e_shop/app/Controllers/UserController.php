@@ -59,12 +59,34 @@ class UserController extends BaseController
 		$row = $dbuser->getRow();
 		
 		if($email==$row->email && $password==$row->password && 'client'==$row->type){
-			$users=array('email'=>$email);
+			$db = \Config\Database::connect();
+			$builder = $db->table('category');
+			$query = $builder->get();
+
+			foreach ($query->getResult() as $row)
+			{
+					echo $row->name;
+			}
+			$users=array('email'=>$email,'name'=>$row->name);
+			
 			$result= view('users/header').view('users/viewClient',$users);
 		}
 		elseif ($email==$row->email && $password==$row->password && 'admin'==$row->type) {
-			$users=array('email'=>$email);
-			$result= view('users/header').view('users/viewAdmin',$users);
+
+			$db2 = \Config\Database::connect();
+			$query2 = $db2->query('SELECT count(distinct purchase.id_client) as client_buy,
+			sum(buy.quantity) as total_product
+			,sum(purchase.total) as total_cash from purchase INNER JOIN buy');
+			$results = $query2->getResult();
+
+			foreach ($results as $row2)
+			{
+					echo $row2->client_buy;
+					echo $row2->total_product;
+					echo $row2->total_cash;
+			}
+			$estadistic=array('email'=>$email,'client_buy'=>$row2->client_buy,'total_product'=>$row2->total_product,'total_cash'=>$row2->total_cash);
+			$result= view('users/header').view('users/viewAdmin',$estadistic);
 		}
 		else{
 			$users=array('error'=>'error user no find');

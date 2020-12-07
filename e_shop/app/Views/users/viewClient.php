@@ -7,6 +7,6 @@
 </head>
 <body>
     <h1>Welcome</h1>
-    <?php echo $email; ?>
+    <?php echo $email; echo $name;?>
 </body>
 </html>

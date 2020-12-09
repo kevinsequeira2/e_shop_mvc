@@ -35,6 +35,13 @@ $routes->get('/users/login', 'UserController::firstView');
 $routes->get('/users/valid', 'UserController::validLogin');
 $routes->get('/users/singnup', 'UserController::register');
 $routes->get('/users/addedusers', 'UserController::addUser');
+$routes->get('/admin/Viewcategory', 'AdminController::category');
+$routes->get('/edit/category', 'CategoryController::editCategory');
+$routes->get('/delete/category', 'CategoryController::deleteCategory');
+$routes->get('/add/category', 'CategoryController::addCategory');
+$routes->get('/insert/category', 'CategoryController::insertCategory');
+$routes->get('/admin', 'CategoryController::back');
+$routes->get('/admin/Viewproducts', 'AdminController::products');
 
 /**
  * --------------------------------------------------------------------

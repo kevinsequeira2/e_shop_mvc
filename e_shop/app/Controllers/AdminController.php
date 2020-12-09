@@ -23,9 +23,12 @@ class AdminController extends BaseController
 
 	public function products()
 	{	
+		$categoryModel=new CategoryModel($db);
+		$categories=$categoryModel->findAll();
+
 		$productsModel=new ProductsModel($db);
 		$products=$productsModel->findAll();
-		$products=array('products' =>$products);
+		$products=array('products' =>$products,'categories' =>$categories);
         return view("users/header").view("admin/Viewproducts",$products);
 	}
 

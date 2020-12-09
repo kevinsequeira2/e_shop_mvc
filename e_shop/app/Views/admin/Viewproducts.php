@@ -47,6 +47,66 @@
             </div>
 
         </div>
+        <br>
+        <center>
+            <div class="container">
+                <?php
+                    echo form_open('/ProductsController/saveProducts');
+                ?>
+
+                <div class="form-group">
+                <?php
+                    echo form_label('Insert products');
+                    echo "<br>";
+                    echo form_label('SKU');
+                    echo "<br>";
+                    echo form_input(array('id'=>'input','name' =>'SKU','type' =>'number' , 'placeholder' =>'SKU','class'=>'form-control'));
+                    echo "<br>";
+                    echo form_label('Description');
+                    echo "<br>";
+                    echo form_input(array('id'=>'input','name' =>'description','type' =>'text' , 'placeholder' =>'description','class'=>'form-control'));
+                    echo "<br>";
+                    echo form_label('Stock');
+                    echo "<br>";
+                    echo form_input(array('id'=>'input','name' =>'Stock','type' =>'number' , 'placeholder' =>'Stock','class'=>'form-control'));
+                    echo "<br>";
+                    echo form_label('Price');
+                    echo "<br>";
+                    echo form_input(array('id'=>'input','name' =>'Precio','type' =>'number' , 'placeholder' =>'Price','class'=>'form-control'));
+                    echo "<br>";
+                    echo form_label('Name');
+                    echo "<br>";
+                    echo form_input(array('id'=>'input','name' =>'name' , 'placeholder' =>'name','class'=>'form-control'));
+                    echo "<br>";
+                    echo form_label('Image');
+                    echo "<br>";
+                    echo form_input(array('id'=>'input','name' =>'image' , 'type' =>'file','class'=>'form-control'));
+                    echo "<br>";
+                    echo form_label('Id_category');
+                    echo "<br>";
+                    ?>
+                    
+                    <select name="id_category">
+                            <?php foreach ($categories as $key ) {
+                                # code...
+                             ?>
+                            <option value="<?php echo $key['id']; ?>" <?php echo  set_select('id_category', $key['id'], TRUE); ?> ><?php echo $key['name']; ?></option>
+                            <?php } ?>
+                    </select>
+                    <br>
+                    <?php
+                    echo "<br>";
+                    echo form_submit('saveProducts','Save','class="btn btn-primary"');
+                    echo "<br>";
+                ?>
+                </div>
+                <button class="btn btn-danger"><a href="<?php echo base_url(); ?>/admin">Back</a></button>
+                <?php
+                    echo form_close();
+                ?>
+            </div>
+        
+    </center>
     
 </body>
 </html>

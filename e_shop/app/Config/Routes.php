@@ -42,6 +42,10 @@ $routes->get('/add/category', 'CategoryController::addCategory');
 $routes->get('/insert/category', 'CategoryController::insertCategory');
 $routes->get('/admin', 'CategoryController::back');
 $routes->get('/admin/Viewproducts', 'AdminController::products');
+$routes->get('/edit/products', 'ProductsController::editProducts');
+$routes->get('/edit/_products', 'ProductsController::edit_Products');
+$routes->get('/delete/products', 'ProductsController::deleteProducts');
+$routes->get('/insert/products', 'ProductsController::saveProducts');
 
 /**
  * --------------------------------------------------------------------

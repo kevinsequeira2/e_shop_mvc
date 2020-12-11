@@ -46,6 +46,10 @@ $routes->get('/edit/products', 'ProductsController::editProducts');
 $routes->get('/edit/_products', 'ProductsController::edit_Products');
 $routes->get('/delete/products', 'ProductsController::deleteProducts');
 $routes->get('/insert/products', 'ProductsController::saveProducts');
+$routes->get('/view/categories', 'ClientController::viewclientCategories');
+$routes->get('/get/products', 'ClientController::viewclientProducts');
+$routes->get('/ViewClient', 'ClientController::backClient');
+
 
 /**
  * --------------------------------------------------------------------

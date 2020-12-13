@@ -70,7 +70,7 @@
                         <td><span class="text-white"><?php echo $data['name']; ?></span></td>
                         <td><span class="text-white"><?php echo $data['id_category']; ?></span></td>
                         <td><span class="text-white"><img src="<?php echo base_url(); ?>/<?php echo $data['image']; ?>" width="100px" height="100px"></span></td>
-                        <td><a href="<?php echo base_url(); ?>/edit/products?id=<?php echo $data['id']; ?>" class="btn btn-primary" role="button">Buy<i class="bi bi-arrow-right-circle"></i></a></td>
+                        <td><a href="<?php echo base_url(); ?>/buy/car?id=<?php echo $data['id']; ?>" class="btn btn-primary" role="button">Buy<i class="bi bi-arrow-right-circle"></i></a></td>
                     </tr>
                     <?php }?>
                 </table>

@@ -49,6 +49,7 @@ $routes->get('/insert/products', 'ProductsController::saveProducts');
 $routes->get('/view/categories', 'ClientController::viewclientCategories');
 $routes->get('/get/products', 'ClientController::viewclientProducts');
 $routes->get('/ViewClient', 'ClientController::backClient');
+$routes->get('/buy/car', 'ClientController::buyCar');
 
 
 /**

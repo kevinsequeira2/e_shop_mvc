@@ -100,6 +100,7 @@
       <br>
       <br>
       <br>
+      
       <div class="row">
         <div class="row">
           <h3 class="text-white">|||||||</h3>
@@ -110,7 +111,7 @@
               <h5 class="text-white card-title">Total Products Adquired</h5>
               <h6 class="text-warning card-subtitle mb-2 text-muted">Products Adquired</h6>
               <center>
-                <p class="text-white card-text"><h2 class="text-white"><?php echo "cant [".$client_buy."]"; ?></h2></p>
+                <p class="text-white card-text"><h2 class="text-white"><?php echo $cash; ?></h2></p>
               </center>
             </div>
           </div>
@@ -124,7 +125,7 @@
               <h5 class="text-white card-title">Total cash</h5>
               <h6 class="text-warning card-subtitle mb-2 text-muted">Cash</h6>
               <center>
-                <p class="text-white card-text"><h2 class="text-white"><?php echo "cant [".$total_product."]";?></h2></p>
+                <p class="text-white card-text"><h2 class="text-white"><?php echo "$ $total";?></h2></p>
               </center>
             </div>
           </div>

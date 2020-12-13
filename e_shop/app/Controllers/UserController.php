@@ -60,16 +60,22 @@ class UserController extends BaseController
 		
 		if($email==$row->email && $password==$row->password && 'client'==$row->type){
 			$db = \Config\Database::connect();
-			$builder = $db->table('category');
-			$query = $builder->get();
-
-			foreach ($query->getResult() as $row)
-			{
-					echo $row->name;
+			$users3 = $userModel->where('email', $email)
+				   ->findAll();
+			foreach ($users3 as $key) {
+				# code...
 			}
-			$users=array('email'=>$email,'name'=>$row->name);
 			
-			$result= view('users/header').view('users/viewClient',$users);
+			$query = $db->query('SELECT purchase.total as total,sum(buy.quantity) as cash FROM purchase
+			INNER JOIN buy
+			on buy.id_client=purchase.id_client and purchase.id_client='.$key['id'].' ');
+			$results = $query->getResult();
+			foreach ($results as $row)
+			{
+					
+			}
+			$estadistic=array('cash'=>$row->cash,'total'=>$row->total,'id'=>$key['id']);
+			return view('users/header').view('users/viewClient',$estadistic);
 		}
 		elseif ($email==$row->email && $password==$row->password && 'admin'==$row->type) {
 

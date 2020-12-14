@@ -32,6 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'UserController::index');
 $routes->get('/users/login', 'UserController::firstView');
+$routes->get('/logout', 'UserController::logout');
 $routes->get('/users/valid', 'UserController::validLogin');
 $routes->get('/users/singnup', 'UserController::register');
 $routes->get('/users/addedusers', 'UserController::addUser');
@@ -50,6 +51,13 @@ $routes->get('/view/categories', 'ClientController::viewclientCategories');
 $routes->get('/get/products', 'ClientController::viewclientProducts');
 $routes->get('/ViewClient', 'ClientController::backClient');
 $routes->get('/buy/car', 'ClientController::buyCar');
+$routes->get('/view/car', 'ClientController::viewCar');
+$routes->get('/update/car', 'ClientController::updateCar');
+$routes->get('/delete/car', 'ClientController::deleteCar');
+$routes->get('/buy/all', 'ClientController::checkout');
+$routes->get('/buy/completed', 'ClientController::dropCar');
+$routes->get('/buy/total', 'ClientController::total');
+$routes->get('/especifict', 'ClientController::especifict');
 
 
 /**

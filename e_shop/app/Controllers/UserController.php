@@ -101,7 +101,11 @@ class UserController extends BaseController
 		
 		return $result;
 	}
-
+	public function logout()
+	{
+		$this->$session->destroy();
+		return view('users/header').view('users/viewLogin');
+	}
 	public function index()
 	{
 		return view('users/header').view('users/viewWelcome');
